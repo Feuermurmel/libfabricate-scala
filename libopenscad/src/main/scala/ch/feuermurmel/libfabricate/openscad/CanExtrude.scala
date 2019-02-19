@@ -1,4 +1,4 @@
-package openscad
+package ch.feuermurmel.libfabricate.openscad
 
 trait CanExtrude[A, B] {
   def extrude(element: A, fn: Expression => Expression): B

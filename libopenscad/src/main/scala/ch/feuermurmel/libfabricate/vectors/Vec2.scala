@@ -1,4 +1,4 @@
-package vectors
+package ch.feuermurmel.libfabricate.vectors
 
 import java.lang.Math.sqrt
 

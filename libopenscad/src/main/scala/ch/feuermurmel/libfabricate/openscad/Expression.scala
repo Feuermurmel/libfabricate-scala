@@ -1,4 +1,4 @@
-package openscad
+package ch.feuermurmel.libfabricate.openscad
 
 // Sad attempt at resolving issues with overload resolution in conjunction with the explicit definition of apply(). Shadowing the generated apply() with a private method confuses IntelliJ IDEA.
 case class Expression(data: (Symbol, Map[Symbol, ArgumentValue], Seq[Expression])) {

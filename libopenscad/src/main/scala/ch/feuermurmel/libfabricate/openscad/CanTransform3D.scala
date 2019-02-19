@@ -1,4 +1,4 @@
-package openscad
+package ch.feuermurmel.libfabricate.openscad
 
 trait CanTransform3D[A] {
   def transform(element: A, fn: Expression => Expression): A

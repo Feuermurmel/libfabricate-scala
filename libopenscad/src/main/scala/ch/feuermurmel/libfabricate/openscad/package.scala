@@ -1,7 +1,9 @@
+package ch.feuermurmel.libfabricate
+
 import java.nio.file.Path
 
 import better.files.File
-import vectors.{Vec2, Vec3}
+import ch.feuermurmel.libfabricate.vectors.{Vec2, Vec3}
 
 // TODO: Reorder methods
 // TODO: add cut and project operations

@@ -1,6 +1,6 @@
-package openscad
+package ch.feuermurmel.libfabricate.openscad
 
-import vectors.{Vec2, Vec3}
+import ch.feuermurmel.libfabricate.vectors.{Vec2, Vec3}
 
 trait ArgumentValue {
   def string: String

@@ -1,4 +1,4 @@
-package openscad
+package ch.feuermurmel.libfabricate.openscad
 
 trait HasVoid[A] {
   def void: A

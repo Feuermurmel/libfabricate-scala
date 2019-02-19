@@ -1,4 +1,4 @@
-package openscad
+package ch.feuermurmel.libfabricate.openscad
 
 trait CanCombine[A] {
   def combine(elements: Seq[A], fn: Seq[Expression] => Expression): A
