@@ -1,3 +1,6 @@
+import java.nio.file.Path
+
+import better.files.File
 import vectors.{Vec2, Vec3}
 
 // TODO: Reorder methods
@@ -26,6 +29,9 @@ package object openscad {
   // TODO: Fix this interface
   def rectangle(corner1: Vec2, corner2: Vec2) =
     Element2D(Expression('square, 'size -> (corner2 - corner1))()).translate(corner1)
+
+  def writeToOpenSCADFile(element: Element, path: Path) =
+    File(path).write(element.expression.lines.map(_ + "\n").mkString)
 
   implicit class CanCombineOps[A](value: A) {
     def |[B: CanCombine](other: B)(implicit cast: A => B) =
