@@ -9,3 +9,6 @@ scalacOptions += "-Xfatal-warnings"
 val libopenscad = project
   .settings(
     libraryDependencies += betterFiles)
+
+val libopenscad_demo = project
+  .dependsOn(libopenscad)
