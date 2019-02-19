@@ -18,5 +18,5 @@ case class Vec3(x: Double, y: Double, z: Double) {
 }
 
 object Vec3 {
-  implicit class TupleAsVec2[A <% Double](value: (A, A, A)) extends Vec3(value._1, value._2, value._3)
+  implicit class TupleAsVec2[A: CanConvertToDouble](value: (A, A, A)) extends Vec3(value._1, value._2, value._3)
 }
