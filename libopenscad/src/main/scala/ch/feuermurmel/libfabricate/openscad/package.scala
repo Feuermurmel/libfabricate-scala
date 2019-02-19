@@ -14,6 +14,7 @@ import ch.feuermurmel.libfabricate.vectors.{Vec2, Vec3}
 // TODO: add cube primitive
 // TODO: add polygon primitive
 // TODO: add polyhedron primitive
+// TODO: Find solution for handling of $fn and similar
 package object openscad {
   def union[A: CanCombine: HasVoid](elements: Seq[A]) =
     elements.fold(HasVoid.void[A])(_ | _)
@@ -29,9 +30,13 @@ package object openscad {
     Element2D(Expression('circle, 'r -> radius, '$fn -> 16)()).translate(center)
 
   // TODO: Fix this interface
-  def rectangle(corner1: Vec2, corner2: Vec2) =
+  def rectangle(corner1: Vec2, corner2: Vec2): Element2D =
     Element2D(Expression('square, 'size -> (corner2 - corner1))()).translate(corner1)
 
+  def rectangle(corner1: Vec2, sizex: Double, sizey: Double): Element2D =
+    rectangle(corner1, corner1 + (sizex, sizey))
+
+  // TODO: Maybe change API to use better-files File
   def writeToOpenSCADFile(element: Element, path: Path) =
     File(path).write(element.expression.lines.map(_ + "\n").mkString)
 
